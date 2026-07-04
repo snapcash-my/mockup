@@ -64,16 +64,16 @@ snapcash-retailitics/
    - Connect the repository to Cloudflare Pages
 
 2. **Build Settings**
-   - **Build command**: Not required (static site)
+   - **Framework preset**: Static HTML
+   - **Build command**: Leave empty
    - **Build output directory**: `/`
    - **Root directory**: `/`
 
-3. **Environment Variables**
-   - No environment variables required
-
-4. **Deploy**
-   - Cloudflare Pages will automatically build and deploy
+3. **Deploy**
+   - Click "Save and Deploy"
    - Your site will be available at `https://your-project.pages.dev`
+
+**Note**: This is a pure static HTML site with no build process required.
 
 ### Local Development
 
