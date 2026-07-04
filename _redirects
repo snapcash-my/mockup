@@ -1,12 +1,4 @@
 # Cloudflare Pages Redirects
-# Ensure clean URLs and proper routing
-
-# Home page
-/ /index.html 200
-
 # App mockups
 /user-app /user-app-mockup.html 200
 /merchant-app /merchant-app-mockup.html 200
-
-# Fallback for SPA-like behavior (if needed in future)
-/* /index.html 200
