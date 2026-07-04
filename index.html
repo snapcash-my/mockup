@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapCash - Decentralized ATM Network</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #fb923c 0%, #f97316 50%, #ea580c 100%);
+        }
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        .phone-mockup {
+            width: 280px;
+            height: 520px;
+            border: 8px solid #1a1a1a;
+            border-radius: 24px;
+            overflow: hidden;
+            position: relative;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 20px;
+            background: #1a1a1a;
+            border-radius: 0 0 12px 12px;
+            z-index: 100;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #fb923c, #f97316);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center mr-3">
+                        <i class="fas fa-comment-dollar text-white text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">SnapCash</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-700 hover:text-orange-500 transition">Features</a>
+                    <a href="#how-it-works" class="text-gray-700 hover:text-orange-500 transition">How It Works</a>
+                    <a href="#apps" class="text-gray-700 hover:text-orange-500 transition">Apps</a>
+                    <a href="#contact" class="text-gray-700 hover:text-orange-500 transition">Contact</a>
+                </div>
+                <button class="md:hidden">
+                    <i class="fas fa-bars text-gray-700"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-5xl font-bold mb-6">
+                        SnapCash: Your Decentralized ATM Network
+                    </h1>
+                    <p class="text-xl mb-8 opacity-90">
+                        Transform your mobile device into a cash withdrawal hub. Join our network of trusted merchants and access cash anytime, anywhere in Malaysia.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="user-app-mockup.html" class="bg-white text-orange-600 px-8 py-4 rounded-lg font-semibold text-center hover:bg-gray-100 transition">
+                            <i class="fas fa-user mr-2"></i>
+                            Try User App
+                        </a>
+                        <a href="merchant-app-mockup.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold text-center hover:bg-white hover:text-orange-600 transition">
+                            <i class="fas fa-store mr-2"></i>
+                            Become a Merchant
+                        </a>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="phone-mockup float-animation">
+                        <div class="notch"></div>
+                        <div class="h-full bg-gradient-to-b from-orange-500 to-orange-600 flex items-center justify-center">
+                            <div class="text-center text-white p-6">
+                                <i class="fas fa-map-marked-alt text-6xl mb-4"></i>
+                                <h3 class="text-lg font-bold">Find Nearby Merchants</h3>
+                                <p class="text-sm opacity-80">Cash when you need it</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="stat-number">1000+</div>
+                    <p class="text-gray-600 mt-2">Active Merchants</p>
+                </div>
+                <div>
+                    <div class="stat-number">50K+</div>
+                    <p class="text-gray-600 mt-2">Happy Users</p>
+                </div>
+                <div>
+                    <div class="stat-number">RM 10M+</div>
+                    <p class="text-gray-600 mt-2">Transactions</p>
+                </div>
+                <div>
+                    <div class="stat-number">24/7</div>
+                    <p class="text-gray-600 mt-2">Availability</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Why Choose SnapCash?</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Experience the future of cash access with our decentralized network that brings ATMs to your neighborhood.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="feature-card bg-white rounded-xl p-8 text-center">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-map-marker-alt text-orange-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Find Nearby Merchants</h3>
+                    <p class="text-gray-600">
+                        Locate trusted local stores and mobile merchants offering cash withdrawal services in your area.
+                    </p>
+                </div>
+                
+                <div class="feature-card bg-white rounded-xl p-8 text-center">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-mobile-alt text-orange-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Mobile Convenience</h3>
+                    <p class="text-gray-600">
+                        Request cash through your phone and pick it up from nearby merchants within minutes.
+                    </p>
+                </div>
+                
+                <div class="feature-card bg-white rounded-xl p-8 text-center">
+                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-shield-alt text-orange-500 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4">Secure Transactions</h3>
+                    <p class="text-gray-600">
+                        DuitNow QR payments and encrypted transactions ensure your money is always safe.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">How SnapCash Works</h2>
+                <p class="text-xl text-gray-600">Simple steps to access cash anytime, anywhere</p>
+            </div>
+            
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                        1
+                    </div>
+                    <h3 class="font-semibold mb-2">Find Merchants</h3>
+                    <p class="text-gray-600 text-sm">Browse nearby stores and mobile merchants on the map</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                        2
+                    </div>
+                    <h3 class="font-semibold mb-2">Request Cash</h3>
+                    <p class="text-gray-600 text-sm">Enter amount and send withdrawal request</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                        3
+                    </div>
+                    <h3 class="font-semibold mb-2">Pay & Collect</h3>
+                    <p class="text-gray-600 text-sm">Pay via DuitNow QR and collect your cash</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                        4
+                    </div>
+                    <h3 class="font-semibold mb-2">Rate & Go</h3>
+                    <p class="text-gray-600 text-sm">Rate your experience and help improve the network</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apps Section -->
+    <section id="apps" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4">Experience Our Apps</h2>
+                <p class="text-xl text-gray-600">Try our interactive app mockups to see SnapCash in action</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-gradient-to-r from-blue-500 to-blue-600 text-white p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-user text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">User App</h3>
+                        </div>
+                        <p class="mb-4">Find merchants, request cash, and manage your transactions</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Locate nearby cash withdrawal points</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Secure mobile payments</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Real-time transaction tracking</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Merchant ratings and reviews</span>
+                            </li>
+                        </ul>
+                        <a href="user-app-mockup.html" class="w-full bg-blue-500 text-white py-3 rounded-lg font-semibold text-center inline-block hover:bg-blue-600 transition">
+                            <i class="fas fa-mobile-alt mr-2"></i>
+                            Try User App Mockup
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="bg-gradient-to-r from-orange-500 to-orange-600 text-white p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-store text-3xl mr-3"></i>
+                            <h3 class="text-2xl font-bold">Merchant App</h3>
+                        </div>
+                        <p class="mb-4">Manage your cash withdrawal service and grow your business</p>
+                    </div>
+                    <div class="p-6">
+                        <ul class="space-y-3 mb-6">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Accept and manage cash requests</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Track earnings and analytics</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Integrated POS system</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-3"></i>
+                                <span>Customer relationship management</span>
+                            </li>
+                        </ul>
+                        <a href="merchant-app-mockup.html" class="w-full bg-orange-500 text-white py-3 rounded-lg font-semibold text-center inline-block hover:bg-orange-600 transition">
+                            <i class="fas fa-mobile-alt mr-2"></i>
+                            Try Merchant App Mockup
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">
+                        Join the Decentralized ATM Revolution
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        SnapCash is transforming how Malaysians access cash by creating a network of trusted merchants who act as decentralized ATMs. No more searching for ATMs or paying high fees.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-orange-500 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold">Lower Fees</h4>
+                                <p class="text-gray-600">Enjoy competitive withdrawal rates compared to traditional ATMs</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-orange-500 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold">Extended Hours</h4>
+                                <p class="text-gray-600">Access cash during business hours, not just banking hours</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-orange-500 mt-1 mr-3"></i>
+                            <div>
+                                <h4 class="font-semibold">Community Support</h4>
+                                <p class="text-gray-600">Support local businesses while accessing your cash</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-orange-50 rounded-xl p-8">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Ready to Get Started?</h3>
+                    <div class="space-y-4">
+                        <a href="user-app-mockup.html" class="block w-full bg-orange-500 text-white py-3 rounded-lg font-semibold text-center hover:bg-orange-600 transition">
+                            <i class="fas fa-download mr-2"></i>
+                            Download User App
+                        </a>
+                        <a href="merchant-app-mockup.html" class="block w-full border-2 border-orange-500 text-orange-500 py-3 rounded-lg font-semibold text-center hover:bg-orange-50 transition">
+                            <i class="fas fa-store mr-2"></i>
+                            Become a Merchant
+                        </a>
+                    </div>
+                    <p class="text-sm text-gray-600 mt-4 text-center">
+                        Join 50,000+ Malaysians using SnapCash
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center mr-3">
+                            <i class="fas fa-comment-dollar text-white text-xl"></i>
+                        </div>
+                        <span class="text-xl font-bold">SnapCash</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Your decentralized ATM network for convenient cash access across Malaysia.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Product</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="user-app-mockup.html" class="hover:text-orange-500 transition">User App</a></li>
+                        <li><a href="merchant-app-mockup.html" class="hover:text-orange-500 transition">Merchant App</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition">Features</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Company</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-orange-500 transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition">Careers</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition">Blog</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition">Press</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-orange-500 transition">Help Center</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-orange-500 transition">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 SnapCash. All rights reserved. | Decentralized ATM Network for Malaysia</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapCash Merchant App - Screen Mockup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .phone-frame {
+            width: 375px;
+            height: 700px;
+            border: 12px solid #1a1a1a;
+            border-radius: 36px;
+            overflow: hidden;
+            position: relative;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150px;
+            height: 28px;
+            background: #1a1a1a;
+            border-radius: 0 0 20px 20px;
+            z-index: 100;
+        }
+        .screen-content {
+            height: 100%;
+            overflow-y: auto;
+            position: relative;
+        }
+        .status-bar {
+            height: 44px;
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .bottom-nav {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            background: white;
+            border-top: 1px solid #e5e7eb;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-bottom: 20px;
+        }
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            color: #9ca3af;
+            font-size: 12px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .nav-item.active {
+            color: #fb923c;
+        }
+        .nav-item i {
+            font-size: 20px;
+        }
+        .toggle-switch {
+            position: relative;
+            width: 48px;
+            height: 24px;
+            background: #e5e7eb;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .toggle-switch.active {
+            background: #fb923c;
+        }
+        .toggle-switch::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 20px;
+            height: 20px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s;
+        }
+        .toggle-switch.active::after {
+            transform: translateX(24px);
+        }
+        .status-badge {
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .status-pending { background: #fef3c7; color: #92400e; }
+        .status-accepted { background: #dbeafe; color: #1e40af; }
+        .status-completed { background: #d1fae5; color: #065f46; }
+        .status-cancelled { background: #fee2e2; color: #991b1b; }
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            background: #f3f4f6;
+            border: 2px dashed #d1d5db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 20px auto;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        .screen {
+            display: none;
+            height: calc(100% - 124px);
+            overflow-y: auto;
+        }
+        .screen.active {
+            display: block;
+        }
+        .webview-container {
+            height: 100%;
+            background: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+        }
+        .webview-header {
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .webview-url-bar {
+            flex: 1;
+            background: #f3f4f6;
+            border-radius: 20px;
+            padding: 8px 16px;
+            font-size: 14px;
+            color: #6b7280;
+        }
+        .webview-content {
+            flex: 1;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-7xl mx-auto">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">SnapCash Merchant App - Screen Mockups</h1>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Screen 1: Merchant Login -->
+            <div class="flex flex-col items-center">
+                <h2 class="text-xl font-semibold mb-4">Merchant Login</h2>
+                <div class="phone-frame">
+                    <div class="notch"></div>
+                    <div class="screen-content">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <div class="flex gap-1">
+                                <i class="fas fa-signal"></i>
+                                <i class="fas fa-wifi"></i>
+                                <i class="fas fa-battery-full"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="screen active">
+                            <div class="flex flex-col items-center justify-center h-full px-8 pb-20">
+                                <div class="w-24 h-24 bg-orange-500 rounded-full flex items-center justify-center mb-6">
+                                    <img src="SnapCash logo.png" alt="SnapCash Logo" class="w-16 h-16 object-contain">
+                                </div>
+                                <h1 class="text-2xl font-bold text-gray-900 mb-2">Merchant Portal</h1>
+                                <p class="text-gray-600 text-center mb-8">Log in to manage your cash withdrawal services</p>
+                                
+                                <div class="w-full space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                        <input type="email" placeholder="merchant@example.com" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                                        <input type="password" placeholder="••••••••" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                                    </div>
+                                    <div class="text-right">
+                                        <a href="#" class="text-orange-500 text-sm">Forgot password?</a>
+                                    </div>
+                                    <button class="w-full bg-orange-500 text-white py-3 rounded-xl font-semibold">
+                                        Log In
+                                    </button>
+                                </div>
+                                
+                                <div class="relative w-full my-6">
+                                    <div class="absolute inset-0 flex items-center">
+                                        <div class="w-full border-t border-gray-300"></div>
+                                    </div>
+                                    <div class="relative flex justify-center text-sm">
+                                        <span class="px-2 bg-white text-gray-500">Or continue with</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="w-full space-y-3">
+                                    <button class="w-full bg-orange-500 text-white py-3 rounded-xl font-semibold flex items-center justify-center">
+                                        <i class="fab fa-google mr-2"></i>
+                                        Sign in with Google
+                                    </button>
+                                    <button class="w-full bg-black text-white py-3 rounded-xl font-semibold flex items-center justify-center">
+                                        <i class="fab fa-apple mr-2"></i>
+                                        Sign in with Apple
+                                    </button>
+                                </div>
+                                
+                                <p class="text-sm text-gray-600 mt-6">
+                                    Don't have an account? 
+                                    <a href="#" class="text-orange-500 font-medium">Register as Merchant</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Screen 2: Merchant Register -->
+            <div class="flex flex-col items-center">
+                <h2 class="text-xl font-semibold mb-4">Merchant Register</h2>
+                <div class="phone-frame">
+                    <div class="notch"></div>
+                    <div class="screen-content">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <div class="flex gap-1">
+                                <i class="fas fa-signal"></i>
+                                <i class="fas fa-wifi"></i>
+                                <i class="fas fa-battery-full"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="screen active">
+                            <div class="bg-orange-500 text-white p-4">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-arrow-left"></i>
+                                    <h1 class="text-lg font-semibold">Register as Merchant</h1>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4 pb-20">
+                                <p class="text-sm text-gray-600 mb-6">Fill out the form below to submit your business for review.</p>
+                                
+                                <div class="space-y-4">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Business Name *</label>
+                                        <input type="text" placeholder="e.g., My Local Store" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Business Address *</label>
+                                        <textarea placeholder="e.g., 123 Main Street, City, Postcode" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg"></textarea>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+                                        <input type="tel" placeholder="e.g., +60123456789" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Business Email *</label>
+                                        <input type="email" placeholder="business@example.com" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Business Type *</label>
+                                        <select class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                                            <option>Select business type</option>
+                                            <option>Retail Store</option>
+                                            <option>Mobile Merchant</option>
+                                            <option>Convenience Store</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                    
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Operating Hours *</label>
+                                        <input type="text" placeholder="e.g., 9 AM - 9 PM Daily" class="w-full px-3 py-2 border border-gray-300 rounded-lg">
+                                    </div>
+                                    
+                                    <div class="bg-blue-50 rounded-lg p-3">
+                                        <p class="text-sm text-blue-800">
+                                            <i class="fas fa-info-circle mr-2"></i>
+                                            Your application will be reviewed within 24-48 hours. You'll receive an email once approved.
+                                        </p>
+                                    </div>
+                                    
+                                    <div class="flex items-start gap-2">
+                                        <input type="checkbox" class="mt-1">
+                                        <label class="text-sm text-gray-600">
+                                            I agree to the <a href="#" class="text-orange-500">Terms of Service</a> and <a href="#" class="text-orange-500">Privacy Policy</a>
+                                        </label>
+                                    </div>
+                                    
+                                    <button class="w-full bg-orange-500 text-white py-3 rounded-xl font-semibold">
+                                        Submit Application
+                                    </button>
+                                    
+                                    <p class="text-sm text-gray-600 text-center">
+                                        Already have an account? 
+                                        <a href="#" class="text-orange-500 font-medium">Log In</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Screen 3: Merchant Dashboard -->
+            <div class="flex flex-col items-center">
+                <h2 class="text-xl font-semibold mb-4">Merchant Dashboard</h2>
+                <div class="phone-frame">
+                    <div class="notch"></div>
+                    <div class="screen-content">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <div class="flex gap-1">
+                                <i class="fas fa-signal"></i>
+                                <i class="fas fa-wifi"></i>
+                                <i class="fas fa-battery-full"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="screen active" id="dashboard">
+                            <div class="bg-gradient-to-b from-orange-500 to-orange-600 text-white p-6">
+                                <div class="flex justify-between items-center mb-4">
+                                    <h1 class="text-2xl font-bold">Merchant Dashboard</h1>
+                                    <i class="fas fa-bell text-xl"></i>
+                                </div>
+                                
+                                <div class="bg-white/20 backdrop-blur rounded-xl p-4">
+                                    <div class="flex justify-between items-center">
+                                        <div>
+                                            <p class="text-sm opacity-90">Store Status</p>
+                                            <p class="text-lg font-semibold">Online</p>
+                                        </div>
+                                        <div class="toggle-switch active" onclick="this.classList.toggle('active')"></div>
+                                    </div>
+                                    <p class="text-xs mt-2 opacity-80">Toggle to set your store as offline for cash withdrawals</p>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4">
+                                <div class="flex gap-2 mb-4">
+                                    <button class="flex-1 bg-white shadow-sm border border-gray-200 rounded-lg py-2 px-4 text-sm font-medium text-orange-600">
+                                        Transactions
+                                    </button>
+                                    <button class="flex-1 bg-gray-100 rounded-lg py-2 px-4 text-sm font-medium text-gray-600">
+                                        Ratings
+                                    </button>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <h3 class="text-sm font-semibold text-gray-700 mb-3">Latest Transaction Requests</h3>
+                                    <p class="text-xs text-gray-500 mb-3">Review recent cash withdrawal requests from customers</p>
+                                    
+                                    <div class="space-y-3">
+                                        <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
+                                            <div class="flex justify-between items-start mb-2">
+                                                <div>
+                                                    <p class="font-semibold text-gray-900">Fadli Saad</p>
+                                                    <p class="text-xs text-gray-500">May 7, 2026 at 5:09 PM</p>
+                                                    <p class="text-xs text-gray-400">Ref: SC-260507090927-81b835</p>
+                                                </div>
+                                                <span class="status-badge status-pending">Pending</span>
+                                            </div>
+                                            <div class="flex justify-between items-center">
+                                                <p class="text-lg font-bold text-gray-900">RM 200.00</p>
+                                                <button class="bg-orange-500 text-white px-4 py-2 rounded-lg text-sm font-medium">
+                                                    Review
+                                                </button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
+                                            <div class="flex justify-between items-start mb-2">
+                                                <div>
+                                                    <p class="font-semibold text-gray-900">Fadli Saad</p>
+                                                    <p class="text-xs text-gray-500">May 6, 2026 at 11:53 AM</p>
+                                                </div>
+                                                <span class="status-badge status-completed">Completed</span>
+                                            </div>
+                                            <p class="text-lg font-bold text-gray-900">RM 200.00</p>
+                                        </div>
+                                        
+                                        <div class="bg-white rounded-lg p-4 shadow-sm border border-gray-100">
+                                            <div class="flex justify-between items-start mb-2">
+                                                <div>
+                                                    <p class="font-semibold text-gray-900">Fadli Saad</p>
+                                                    <p class="text-xs text-gray-500">May 5, 2026 at 10:07 AM</p>
+                                                </div>
+                                                <span class="status-badge status-completed">Completed</span>
+                                            </div>
+                                            <p class="text-lg font-bold text-gray-900">RM 30.00</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bottom-nav">
+                            <div class="nav-item active">
+                                <i class="fas fa-store"></i>
+                                <span>Merchant</span>
+                            </div>
+                            <div class="nav-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Earnings</span>
+                            </div>
+                            <div class="nav-item">
+                                <i class="fas fa-cash-register"></i>
+                                <span>ezyLite POS</span>
+                            </div>
+                            <div class="nav-item">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Screen 4: Transaction Review -->
+            <div class="flex flex-col items-center">
+                <h2 class="text-xl font-semibold mb-4">Transaction Review</h2>
+                <div class="phone-frame">
+                    <div class="notch"></div>
+                    <div class="screen-content">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <div class="flex gap-1">
+                                <i class="fas fa-signal"></i>
+                                <i class="fas fa-wifi"></i>
+                                <i class="fas fa-battery-full"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="screen active">
+                            <div class="bg-orange-500 text-white p-4">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-arrow-left text-xl"></i>
+                                    <h1 class="text-xl font-bold">Back to Dashboard</h1>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <div class="text-center mb-6">
+                                    <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                        <i class="fas fa-hourglass-half text-orange-500 text-2xl"></i>
+                                    </div>
+                                    <h2 class="text-2xl font-bold text-gray-900 mb-2">Transaction Request</h2>
+                                    <p class="text-sm text-gray-600">May 7, 2026 at 5:09 PM</p>
+                                    <span class="status-badge status-pending">Pending</span>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-xl p-4 mb-6">
+                                    <div class="space-y-3">
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-gray-600">Merchant Ref:</span>
+                                            <span class="text-sm font-mono text-gray-900">SC-260507090927-81b835</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-gray-600">Customer:</span>
+                                            <span class="text-sm font-semibold text-gray-900">Fadli Saad</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-gray-600">Withdrawal Amount:</span>
+                                            <span class="text-sm font-semibold text-gray-900">RM 200.00</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-gray-600">Service Fee:</span>
+                                            <span class="text-sm font-semibold text-gray-900">RM 1.00</span>
+                                        </div>
+                                        <div class="border-t pt-3 flex justify-between">
+                                            <span class="text-sm font-semibold text-gray-900">Total Customer Pays:</span>
+                                            <span class="text-xl font-bold text-orange-600">RM 201.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                                    <p class="text-sm text-blue-800">
+                                        <i class="fas fa-info-circle mr-2"></i>
+                                        Managing this transaction request. Approving will notify the customer to proceed to your location.
+                                    </p>
+                                </div>
+                                
+                                <div class="space-y-3">
+                                    <button class="w-full bg-green-600 text-white py-3 rounded-xl font-semibold hover:bg-green-700 transition">
+                                        <i class="fas fa-check mr-2"></i>
+                                        Approve Request
+                                    </button>
+                                    <button class="w-full bg-white border-2 border-red-500 text-red-500 py-3 rounded-xl font-semibold hover:bg-red-50 transition">
+                                        <i class="fas fa-times mr-2"></i>
+                                        Reject Request
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bottom-nav">
+                            <div class="nav-item active">
+                                <i class="fas fa-store"></i>
+                                <span>Merchant</span>
+                            </div>
+                            <div class="nav-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Earnings</span>
+                            </div>
+                            <div class="nav-item">
+                                <i class="fas fa-cash-register"></i>
+                                <span>ezyLite POS</span>
+                            </div>
+                            <div class="nav-item">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Screen 5: QR Payment Display -->
+            <div class="flex flex-col items-center">
+                <h2 class="text-xl font-semibold mb-4">QR Payment Display</h2>
+                <div class="phone-frame">
+                    <div class="notch"></div>
+                    <div class="screen-content">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <div class="flex gap-1">
+                                <i class="fas fa-signal"></i>
+                                <i class="fas fa-wifi"></i>
+                                <i class="fas fa-battery-full"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="screen active">
+                            <div class="bg-orange-500 text-white p-4">
+                                <div class="flex items-center justify-between">
+                                    <h1 class="text-xl font-bold">Transaction Request</h1>
+                                    <span class="status-badge bg-blue-600 text-white">Accepted</span>
+                                </div>
+                            </div>
+                            
+                            <div class="p-6">
+                                <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-6">
+                                    <div class="flex items-center gap-3">
+                                        <i class="fas fa-user-clock text-blue-600 text-xl"></i>
+                                        <div>
+                                            <p class="text-sm font-semibold text-blue-900">Customer is on their way</p>
+                                            <p class="text-xs text-blue-700">Prepare RM 200.00 cash</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center mb-6">
+                                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Show this DuitNow QR to the customer</h3>
+                                    <div class="qr-code pulse">
+                                        <i class="fas fa-qrcode text-4xl text-gray-400"></i>
+                                    </div>
+                                    <p class="text-sm text-gray-600">Customer will scan this QR to make payment</p>
+                                </div>
+                                
+                                <div class="bg-gray-50 rounded-xl p-4 mb-6">
+                                    <div class="space-y-2">
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-gray-600">Withdrawal Amount:</span>
+                                            <span class="text-sm font-semibold">RM 200.00</span>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <span class="text-sm text-gray-600">Service Fee:</span>
+                                            <span class="text-sm font-semibold">RM 1.00</span>
+                                        </div>
+                                        <div class="border-t pt-2 flex justify-between">
+                                            <span class="text-sm font-semibold">Total:</span>
+                                            <span class="text-lg font-bold text-orange-600">RM 201.00</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <button class="w-full bg-red-500 text-white py-3 rounded-xl font-semibold hover:bg-red-600 transition">
+                                    <i class="fas fa-times mr-2"></i>
+                                    Cancel Transaction
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="bottom-nav">
+                            <div class="nav-item active">
+                                <i class="fas fa-store"></i>
+                                <span>Merchant</span>
+                            </div>
+                            <div class="nav-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Earnings</span>
+                            </div>
+                            <div class="nav-item">
+                                <i class="fas fa-cash-register"></i>
+                                <span>ezyLite POS</span>
+                            </div>
+                            <div class="nav-item">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Screen 6: Earnings Dashboard -->
+            <div class="flex flex-col items-center">
+                <h2 class="text-xl font-semibold mb-4">Earnings Dashboard</h2>
+                <div class="phone-frame">
+                    <div class="notch"></div>
+                    <div class="screen-content">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <div class="flex gap-1">
+                                <i class="fas fa-signal"></i>
+                                <i class="fas fa-wifi"></i>
+                                <i class="fas fa-battery-full"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="screen active">
+                            <div class="bg-gradient-to-b from-orange-500 to-orange-600 text-white p-6">
+                                <h1 class="text-2xl font-bold mb-4">Earnings Dashboard</h1>
+                                
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-white/20 backdrop-blur rounded-xl p-4">
+                                        <p class="text-sm opacity-90">Today's Earnings</p>
+                                        <p class="text-2xl font-bold">RM 45.50</p>
+                                        <p class="text-xs opacity-80">12 transactions</p>
+                                    </div>
+                                    <div class="bg-white/20 backdrop-blur rounded-xl p-4">
+                                        <p class="text-sm opacity-90">This Month</p>
+                                        <p class="text-2xl font-bold">RM 1,234.00</p>
+                                        <p class="text-xs opacity-80">156 transactions</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4">
+                                <div class="flex gap-2 mb-4">
+                                    <button class="flex-1 bg-orange-500 text-white rounded-lg py-2 px-4 text-sm font-medium">
+                                        Daily
+                                    </button>
+                                    <button class="flex-1 bg-white border border-gray-200 rounded-lg py-2 px-4 text-sm font-medium text-gray-600">
+                                        Weekly
+                                    </button>
+                                    <button class="flex-1 bg-white border border-gray-200 rounded-lg py-2 px-4 text-sm font-medium text-gray-600">
+                                        Monthly
+                                    </button>
+                                </div>
+                                
+                                <div class="bg-white rounded-xl p-4 shadow-sm mb-4">
+                                    <h3 class="text-sm font-semibold text-gray-700 mb-3">Recent Transactions</h3>
+                                    <div class="space-y-3">
+                                        <div class="flex justify-between items-center">
+                                            <div>
+                                                <p class="text-sm font-semibold">Fadli Saad</p>
+                                                <p class="text-xs text-gray-500">2 hours ago</p>
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="text-sm font-bold text-green-600">+RM 1.00</p>
+                                                <p class="text-xs text-gray-500">RM 200 withdrawal</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <div>
+                                                <p class="text-sm font-semibold">Ahmad Rahman</p>
+                                                <p class="text-xs text-gray-500">3 hours ago</p>
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="text-sm font-bold text-green-600">+RM 1.50</p>
+                                                <p class="text-xs text-gray-500">RM 300 withdrawal</p>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-between items-center">
+                                            <div>
+                                                <p class="text-sm font-semibold">Siti Nurhaliza</p>
+                                                <p class="text-xs text-gray-500">5 hours ago</p>
+                                            </div>
+                                            <div class="text-right">
+                                                <p class="text-sm font-bold text-green-600">+RM 0.50</p>
+                                                <p class="text-xs text-gray-500">RM 100 withdrawal</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white rounded-xl p-4 shadow-sm">
+                                    <h3 class="text-sm font-semibold text-gray-700 mb-3">Performance Stats</h3>
+                                    <div class="grid grid-cols-2 gap-4">
+                                        <div class="text-center">
+                                            <p class="text-2xl font-bold text-orange-600">4.8</p>
+                                            <p class="text-xs text-gray-500">Average Rating</p>
+                                        </div>
+                                        <div class="text-center">
+                                            <p class="text-2xl font-bold text-orange-600">98%</p>
+                                            <p class="text-xs text-gray-500">Acceptance Rate</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <i class="fas fa-store"></i>
+                                <span>Merchant</span>
+                            </div>
+                            <div class="nav-item active">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Earnings</span>
+                            </div>
+                            <div class="nav-item">
+                                <i class="fas fa-cash-register"></i>
+                                <span>ezyLite POS</span>
+                            </div>
+                            <div class="nav-item">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Screen 7: Merchant Profile -->
+            <div class="flex flex-col items-center">
+                <h2 class="text-xl font-semibold mb-4">Merchant Profile</h2>
+                <div class="phone-frame">
+                    <div class="notch"></div>
+                    <div class="screen-content">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <div class="flex gap-1">
+                                <i class="fas fa-signal"></i>
+                                <i class="fas fa-wifi"></i>
+                                <i class="fas fa-battery-full"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="screen active">
+                            <div class="bg-gradient-to-b from-orange-500 to-orange-600 text-white p-6">
+                                <div class="text-center">
+                                    <div class="w-20 h-20 bg-white rounded-full mx-auto mb-3 flex items-center justify-center">
+                                        <i class="fas fa-store text-orange-500 text-3xl"></i>
+                                    </div>
+                                    <h1 class="text-xl font-bold">Agile Technoprenuer Sdn Bhd</h1>
+                                    <p class="text-sm opacity-90">Mobile Merchant</p>
+                                    <div class="flex justify-center items-center gap-1 mt-2">
+                                        <i class="fas fa-star text-yellow-300"></i>
+                                        <span class="text-sm">4.5 (6 reviews)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4">
+                                <div class="bg-white rounded-xl shadow-sm mb-4">
+                                    <div class="p-4 border-b">
+                                        <h3 class="text-sm font-semibold text-gray-700">Business Information</h3>
+                                    </div>
+                                    <div class="p-4 space-y-3">
+                                        <div class="flex items-center gap-3">
+                                            <i class="fas fa-phone text-gray-400 w-5"></i>
+                                            <span class="text-sm">+60321432143</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <i class="fas fa-clock text-gray-400 w-5"></i>
+                                            <span class="text-sm">9 AM - 5 PM Daily</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <i class="fas fa-map-marker-alt text-gray-400 w-5"></i>
+                                            <span class="text-sm">Kuala Lumpur Area</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white rounded-xl shadow-sm mb-4">
+                                    <div class="p-4 border-b">
+                                        <h3 class="text-sm font-semibold text-gray-700">Account Settings</h3>
+                                    </div>
+                                    <div class="p-4 space-y-3">
+                                        <button class="w-full flex items-center justify-between py-2">
+                                            <div class="flex items-center gap-3">
+                                                <i class="fas fa-user-edit text-gray-400 w-5"></i>
+                                                <span class="text-sm">Edit Profile</span>
+                                            </div>
+                                            <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                        </button>
+                                        <button class="w-full flex items-center justify-between py-2">
+                                            <div class="flex items-center gap-3">
+                                                <i class="fas fa-bell text-gray-400 w-5"></i>
+                                                <span class="text-sm">Notifications</span>
+                                            </div>
+                                            <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                        </button>
+                                        <button class="w-full flex items-center justify-between py-2">
+                                            <div class="flex items-center gap-3">
+                                                <i class="fas fa-shield-alt text-gray-400 w-5"></i>
+                                                <span class="text-sm">Security</span>
+                                            </div>
+                                            <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                        </button>
+                                        <button class="w-full flex items-center justify-between py-2">
+                                            <div class="flex items-center gap-3">
+                                                <i class="fas fa-question-circle text-gray-400 w-5"></i>
+                                                <span class="text-sm">Help & Support</span>
+                                            </div>
+                                            <i class="fas fa-chevron-right text-gray-400 text-xs"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                
+                                <div class="space-y-3">
+                                    <button class="w-full bg-gray-100 text-gray-700 py-3 rounded-xl font-semibold">
+                                        <i class="fas fa-sign-out-alt mr-2"></i>
+                                        Log Out
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <i class="fas fa-store"></i>
+                                <span>Merchant</span>
+                            </div>
+                            <div class="nav-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Earnings</span>
+                            </div>
+                            <div class="nav-item">
+                                <i class="fas fa-cash-register"></i>
+                                <span>ezyLite POS</span>
+                            </div>
+                            <div class="nav-item active">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Screen 8: Settings -->
+            <div class="flex flex-col items-center">
+                <h2 class="text-xl font-semibold mb-4">Settings</h2>
+                <div class="phone-frame">
+                    <div class="notch"></div>
+                    <div class="screen-content">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <div class="flex gap-1">
+                                <i class="fas fa-signal"></i>
+                                <i class="fas fa-wifi"></i>
+                                <i class="fas fa-battery-full"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="screen active">
+                            <div class="bg-orange-500 text-white p-4">
+                                <div class="flex items-center gap-3">
+                                    <i class="fas fa-arrow-left text-xl"></i>
+                                    <h1 class="text-xl font-bold">Settings</h1>
+                                </div>
+                            </div>
+                            
+                            <div class="p-4">
+                                <div class="bg-white rounded-xl shadow-sm mb-4">
+                                    <div class="p-4 border-b">
+                                        <h3 class="text-sm font-semibold text-gray-700">Business Details</h3>
+                                    </div>
+                                    <div class="p-4 space-y-4">
+                                        <div>
+                                            <label class="text-xs text-gray-500 block mb-1">Business Name</label>
+                                            <input type="text" value="Agile Technoprenuer Sdn Bhd" class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm">
+                                        </div>
+                                        <div>
+                                            <label class="text-xs text-gray-500 block mb-1">Phone Number</label>
+                                            <input type="tel" value="+60321432143" class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm">
+                                        </div>
+                                        <div>
+                                            <label class="text-xs text-gray-500 block mb-1">Operating Hours</label>
+                                            <input type="text" value="9 AM - 5 PM Daily" class="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="bg-white rounded-xl shadow-sm mb-4">
+                                    <div class="p-4 border-b">
+                                        <h3 class="text-sm font-semibold text-gray-700">Notification Preferences</h3>
+                                    </div>
+                                    <div class="p-4 space-y-3">
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <p class="text-sm font-medium">New Requests</p>
+                                                <p class="text-xs text-gray-500">Get notified of new cash requests</p>
+                                            </div>
+                                            <div class="toggle-switch active"></div>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <p class="text-sm font-medium">Payment Confirmations</p>
+                                                <p class="text-xs text-gray-500">Alert when payment is received</p>
+                                            </div>
+                                            <div class="toggle-switch active"></div>
+                                        </div>
+                                        <div class="flex items-center justify-between">
+                                            <div>
+                                                <p class="text-sm font-medium">Daily Summary</p>
+                                                <p class="text-xs text-gray-500">Receive daily earnings summary</p>
+                                            </div>
+                                            <div class="toggle-switch"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <button class="w-full bg-orange-500 text-white py-3 rounded-xl font-semibold">
+                                    Save Changes
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <i class="fas fa-store"></i>
+                                <span>Merchant</span>
+                            </div>
+                            <div class="nav-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Earnings</span>
+                            </div>
+                            <div class="nav-item">
+                                <i class="fas fa-cash-register"></i>
+                                <span>ezyLite POS</span>
+                            </div>
+                            <div class="nav-item active">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Screen 9: ezyLite POS App -->
+            <div class="flex flex-col items-center">
+                <h2 class="text-xl font-semibold mb-4">ezyLite POS App</h2>
+                <div class="phone-frame">
+                    <div class="notch"></div>
+                    <div class="screen-content">
+                        <div class="status-bar">
+                            <span>9:41</span>
+                            <div class="flex gap-1">
+                                <i class="fas fa-signal"></i>
+                                <i class="fas fa-wifi"></i>
+                                <i class="fas fa-battery-full"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="screen active">
+                            <div class="webview-container">
+                                <div class="webview-header">
+                                    <i class="fas fa-arrow-left text-gray-600"></i>
+                                    <div class="flex-1 text-center">
+                                        <span class="font-semibold text-gray-800">ezyLite POS</span>
+                                    </div>
+                                    <i class="fas fa-ellipsis-v text-gray-600"></i>
+                                </div>
+                                <div class="webview-content">
+                                    <div class="text-center">
+                                        <i class="fas fa-cash-register text-6xl text-gray-300 mb-4"></i>
+                                        <p class="text-gray-400 text-lg">ezyLite POS</p>
+                                        <p class="text-gray-300 text-sm mt-2">Webview content will load here</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="bottom-nav">
+                            <div class="nav-item">
+                                <i class="fas fa-store"></i>
+                                <span>Merchant</span>
+                            </div>
+                            <div class="nav-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Earnings</span>
+                            </div>
+                            <div class="nav-item active">
+                                <i class="fas fa-cash-register"></i>
+                                <span>ezyLite POS</span>
+                            </div>
+                            <div class="nav-item">
+                                <i class="fas fa-user"></i>
+                                <span>Profile</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <script>
+        // Add interactive functionality for demo purposes
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove active class from all nav items in the same nav
+                this.parentElement.querySelectorAll('.nav-item').forEach(navItem => {
+                    navItem.classList.remove('active');
+                });
+                // Add active class to clicked item
+                this.classList.add('active');
+            });
+        });
+        
+        // Toggle switch functionality
+        document.querySelectorAll('.toggle-switch').forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                this.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

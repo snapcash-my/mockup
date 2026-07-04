@@ -1,0 +1,29 @@
+{
+  "name": "snapcash-retailitics",
+  "version": "1.0.0",
+  "description": "SnapCash Decentralized ATM Network - Mobile App Mockups & Landing Page",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8080",
+    "build": "echo 'Static site - no build required'",
+    "preview": "python3 -m http.server 8080"
+  },
+  "keywords": [
+    "snapcash",
+    "atm",
+    "decentralized",
+    "mobile-app",
+    "mockup",
+    "fintech",
+    "malaysia"
+  ],
+  "author": "SnapCash Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/snapcash-retailitics.git"
+  },
+  "homepage": "https://snapcash.pages.dev",
+  "devDependencies": {},
+  "dependencies": {}
+}
